@@ -4,6 +4,7 @@ import com.pedrosts.dev.course.entities.User;
 import com.pedrosts.dev.course.repositories.UserRepository;
 import com.pedrosts.dev.course.services.exceptions.DatabaseException;
 import com.pedrosts.dev.course.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -42,9 +43,13 @@ public class UserService {
     }
 
     public User updateUser(Long id, User user) {
-        User obj = userRepository.getReferenceById(id);
-        updateData(obj, user);
-        return userRepository.save(obj);
+        try {
+            User obj = userRepository.getReferenceById(id);
+            updateData(obj, user);
+            return userRepository.save(obj);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     private void updateData(User obj, User user) {
