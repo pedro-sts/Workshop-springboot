@@ -42,9 +42,13 @@ public class UserResource {
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable Long id) {
-        User obj = service.findById(id);
-        if (obj == null) return ResponseEntity.status(HttpStatus.NOT_FOUND).body(obj);
         service.deleteUser(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(obj);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+        user = service.updateUser(id, user);
+        return ResponseEntity.ok().body(user);
     }
 }
