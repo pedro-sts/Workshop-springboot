@@ -1,3 +1,4 @@
+# -= Em Desenvolvimento =-
 # 📚 Workshop Spring Boot API
 
 Este projeto é uma **API RESTful desenvolvida com Spring Boot** como parte do meu aprendizado em backend com Java. Ele simula um sistema simples de gerenciamento de usuários, pedidos e produtos, utilizando boas práticas de estruturação em camadas e integração com banco de dados.
@@ -59,7 +60,7 @@ http://localhost:8080
 
 ---
 
-## 📌 Endpoints Disponíveis (Exemplos)
+## 📌 Endpoints Disponíveis
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -72,13 +73,6 @@ http://localhost:8080
 | `GET` | `/categories` | Lista as categorias |
 | `GET` | `/categories/{id}` | Detalhes de um usuário |
 |--------|------|-----------|
-|--------|------|-----------|
-|--------|------|-----------|
-| `DELETE` | `/users/{id}` | Detalhes de um usuário |
-| `DELETE` | `/orders/{id}` | Detalhes de um usuário |
-| `DELETE` | `/products/{id}` | Detalhes de um usuário |
-| `DELETE` | `/categories/{id}` | Detalhes de um usuário |
-| ... | ... | ... |
 
 Você pode usar o **Postman** ou o navegador para testar as rotas.
 
@@ -93,7 +87,7 @@ Você pode usar o **Postman** ou o navegador para testar as rotas.
 
 ---
 
-## 🧠 O que aprendi com este projeto
+## 🧠 O que estou aprendendo com este projeto
 
 - Como iniciar um projeto Spring Boot do zero
 - Como estruturar uma aplicação em camadas (Controller, Service, Repository, Entity)
